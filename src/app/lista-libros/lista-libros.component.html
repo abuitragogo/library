@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Lista de Libros</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Autor</th>
+          <th>Género</th>
+          <th>Año de Publicación</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let libro of libros">
+          <td>{{ libro.id }}</td>
+          <td>{{ libro.titulo }}</td>
+          <td>{{ libro.autor }}</td>
+          <td>{{ libro.genero }}</td>
+          <td>{{ libro.anioPublicacion }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="verDetalle(libro.id)">Ver Detalle</button>
+            <button class="btn btn-warning btn-sm" (click)="editarLibro(libro.id)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="eliminarLibro(libro.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
